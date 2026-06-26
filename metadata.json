@@ -1,0 +1,6 @@
+{
+  "name": "Undangan Pernikahan Rosi & Panji",
+  "description": "Undangan pernikahan digital untuk Rosi dan Panji.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
