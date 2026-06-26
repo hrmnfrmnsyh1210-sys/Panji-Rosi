@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
 import Hero from "./components/Hero";
 import Couple from "./components/Couple";
+import Gallery from "./components/Gallery";
 import Events from "./components/Events";
 import Gift from "./components/Gift";
 import Closing from "./components/Closing";
@@ -33,6 +34,7 @@ export default function App() {
         <div className="animate-in fade-in duration-1000">
           <Hero />
           <Couple />
+          <Gallery />
           <Events />
           <Gift />
           <Closing />
