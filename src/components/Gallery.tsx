@@ -22,11 +22,11 @@ export default function Gallery() {
   const displayedImages = isExpanded ? IMAGES : IMAGES.slice(0, 4);
 
   return (
-    <section className="py-24 px-6 bg-emerald-50 text-emerald-950 text-center relative overflow-hidden transition-all duration-1000">
+    <section className="py-24 px-6 bg-slate-50 text-slate-950 text-center relative overflow-hidden transition-all duration-1000">
       <MotifTenunBackground opacity="0.05" />
       
       <div className="absolute top-0 w-full z-10 left-0">
-        <MotifPucukRebung position="top" className="text-emerald-900 opacity-20" />
+        <MotifPucukRebung position="top" className="text-slate-900 opacity-20" />
       </div>
 
       <div className="max-w-6xl mx-auto flex flex-col items-center relative z-10">
@@ -37,9 +37,9 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           className="mb-16 flex flex-col items-center"
         >
-          <BungaSimetri className="w-10 h-10 mb-6 text-emerald-800" />
+          <BungaSimetri className="w-10 h-10 mb-6 text-slate-800" />
           <h2 className="font-cursive text-6xl text-amber-500 mb-4 drop-shadow-sm">Galeri Cinta</h2>
-          <p className="font-sans text-emerald-700 leading-relaxed text-sm md:text-base uppercase tracking-widest font-medium">
+          <p className="font-sans text-slate-700 leading-relaxed text-sm md:text-base uppercase tracking-widest font-medium">
             Momen Bahagia Kami
           </p>
         </motion.div>
@@ -72,9 +72,9 @@ export default function Gallery() {
                   ease: [0.16, 1, 0.3, 1], 
                   delay: isExpanded && idx >= 4 ? ((idx - 4) % 3) * 0.15 : (idx % 3) * 0.2 
                 }}
-                className="relative group rounded-3xl overflow-hidden border-8 border-white shadow-[0_20px_40px_rgba(0,0,0,0.15)] bg-emerald-100"
+                className="relative group rounded-3xl overflow-hidden border-8 border-white shadow-[0_20px_40px_rgba(0,0,0,0.15)] bg-slate-100"
               >
-                <div className="absolute inset-0 bg-emerald-950/30 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none" />
+                <div className="absolute inset-0 bg-slate-950/30 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none" />
                 <img 
                   src={src} 
                   alt={`Gallery photo ${idx + 1}`} 
@@ -87,7 +87,7 @@ export default function Gallery() {
 
           {/* Fade effect before expanding */}
           {!isExpanded && (
-            <div className="absolute -bottom-6 left-0 w-full h-40 bg-gradient-to-t from-emerald-50 via-emerald-50/80 to-transparent pointer-events-none z-10" />
+            <div className="absolute -bottom-6 left-0 w-full h-40 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent pointer-events-none z-10" />
           )}
         </div>
 
@@ -101,7 +101,7 @@ export default function Gallery() {
           >
             <button
               onClick={() => setIsExpanded(true)}
-              className="relative flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-emerald-950 px-8 py-4 rounded-full font-sans font-bold transition-all shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:shadow-[0_0_40px_rgba(245,158,11,0.5)] hover:-translate-y-1"
+              className="relative flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-950 px-8 py-4 rounded-full font-sans font-bold transition-all shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:shadow-[0_0_40px_rgba(245,158,11,0.5)] hover:-translate-y-1"
             >
               <Images className="w-5 h-5" />
               Lihat Semua Foto
@@ -111,7 +111,7 @@ export default function Gallery() {
       </div>
       
       <div className="absolute bottom-0 w-full z-10 left-0">
-        <MotifPucukRebung position="bottom" className="text-emerald-900 opacity-20" />
+        <MotifPucukRebung position="bottom" className="text-slate-900 opacity-20" />
       </div>
     </section>
   );

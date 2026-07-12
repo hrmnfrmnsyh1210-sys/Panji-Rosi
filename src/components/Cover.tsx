@@ -10,13 +10,13 @@ interface CoverProps {
 export default function Cover({ onOpen }: CoverProps) {
   return (
     <motion.section 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-emerald-950 text-emerald-50 overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950 text-slate-50 overflow-hidden"
       exit={{ opacity: 0, y: "-100%" }}
       transition={{ duration: 1, ease: "easeInOut" }}
     >
       {/* Background Image */}
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/50 via-emerald-950/80 to-emerald-950/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/80 to-slate-950/90"></div>
       
       <MotifTenunBackground opacity="0.25" />
       
@@ -51,7 +51,7 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-cursive text-6xl md:text-8xl text-emerald-50 mb-6 drop-shadow-lg"
+          className="font-cursive text-6xl md:text-8xl text-slate-50 mb-6 drop-shadow-lg"
         >
           {WeddingData.bride.nickname} & {WeddingData.groom.nickname}
         </motion.h1>
@@ -62,7 +62,7 @@ export default function Cover({ onOpen }: CoverProps) {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-12 flex flex-col items-center"
         >
-          <p className="text-sm font-sans text-emerald-300 mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+          <p className="text-sm font-sans text-slate-300 mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</p>
           <div className="px-6 py-2 border-b-2 border-amber-400/50">
             <p className="font-serif text-xl font-medium text-amber-300">Tamu Undangan</p>
           </div>
@@ -73,7 +73,7 @@ export default function Cover({ onOpen }: CoverProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
           onClick={onOpen}
-          className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-emerald-950 px-8 py-3 rounded-full font-sans font-bold transition-colors shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+          className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-8 py-3 rounded-full font-sans font-bold transition-colors shadow-[0_0_20px_rgba(245,158,11,0.4)]"
         >
           <MailOpen className="w-5 h-5" />
           Buka Undangan

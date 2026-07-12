@@ -14,7 +14,7 @@ export default function Gift() {
   };
 
   return (
-    <section className="py-24 px-6 bg-emerald-50 text-emerald-950 relative overflow-hidden">
+    <section className="py-24 px-6 bg-slate-50 text-slate-950 relative overflow-hidden">
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -31,9 +31,9 @@ export default function Gift() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-12"
         >
-          <BungaSimetri className="w-12 h-12 mb-6 text-emerald-800" />
-          <h2 className="font-serif text-3xl mb-4 text-emerald-900 font-semibold">Tanda Kasih</h2>
-          <p className="font-sans text-emerald-800 leading-relaxed text-sm md:text-base bg-white/50 p-4 rounded-xl border border-emerald-100 shadow-sm backdrop-blur-sm">
+          <BungaSimetri className="w-12 h-12 mb-6 text-slate-800" />
+          <h2 className="font-serif text-3xl mb-4 text-slate-900 font-semibold">Tanda Kasih</h2>
+          <p className="font-sans text-slate-800 leading-relaxed text-sm md:text-base bg-white/50 p-4 rounded-xl border border-slate-100 shadow-sm backdrop-blur-sm">
             Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Bagi keluarga dan sahabat yang ingin memberikan tanda kasih, dapat melalui:
           </p>
         </motion.div>
@@ -51,13 +51,13 @@ export default function Gift() {
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-amber-50 rounded-full opacity-50 pointer-events-none" />
               
               <div className="text-center relative z-10">
-                <p className="font-bold text-2xl text-emerald-950 font-serif tracking-wider">{gift.bank}</p>
-                <p className="font-mono text-emerald-700 text-xl my-3 tracking-[0.15em] font-medium bg-emerald-50 py-2 px-6 rounded-lg">{gift.account}</p>
-                <p className="font-sans text-sm text-emerald-600 font-medium uppercase tracking-widest">a.n {gift.name}</p>
+                <p className="font-bold text-2xl text-slate-950 font-serif tracking-wider">{gift.bank}</p>
+                <p className="font-mono text-slate-700 text-xl my-3 tracking-[0.15em] font-medium bg-slate-50 py-2 px-6 rounded-lg">{gift.account}</p>
+                <p className="font-sans text-sm text-slate-600 font-medium uppercase tracking-widest">a.n {gift.name}</p>
               </div>
               <button
                 onClick={() => handleCopy(gift.account)}
-                className="mt-4 flex items-center gap-2 bg-emerald-900 hover:bg-emerald-800 text-amber-400 px-8 py-3 rounded-full font-sans text-sm font-bold transition-colors w-full justify-center shadow-md relative z-10"
+                className="mt-4 flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-amber-400 px-8 py-3 rounded-full font-sans text-sm font-bold transition-colors w-full justify-center shadow-md relative z-10"
               >
                 {copiedAccount === gift.account ? (
                   <>

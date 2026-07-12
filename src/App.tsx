@@ -36,7 +36,7 @@ export default function App() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-emerald-50 font-sans selection:bg-amber-500 selection:text-emerald-950 relative">
+    <main className="w-full min-h-screen bg-slate-50 font-sans selection:bg-amber-500 selection:text-slate-950 relative">
       <AnimatePresence>
         {!isOpened && (
           <Cover onOpen={handleOpen} />

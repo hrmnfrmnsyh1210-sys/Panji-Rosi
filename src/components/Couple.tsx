@@ -4,7 +4,7 @@ import { MotifPucukRebung, BungaSimetri } from "./Ornaments";
 
 export default function Couple() {
   return (
-    <section className="py-24 px-6 bg-emerald-50 text-emerald-950 text-center relative overflow-hidden">
+    <section className="py-24 px-6 bg-slate-50 text-slate-950 text-center relative overflow-hidden">
       {/* Background motif for light section */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -15,7 +15,7 @@ export default function Couple() {
       />
       
       <div className="absolute top-0 w-full z-10 left-0">
-        <MotifPucukRebung position="top" className="text-emerald-900 opacity-20" />
+        <MotifPucukRebung position="top" className="text-slate-900 opacity-20" />
       </div>
 
       <div className="max-w-2xl mx-auto flex flex-col items-center relative z-10">
@@ -26,9 +26,9 @@ export default function Couple() {
           transition={{ duration: 0.8 }}
           className="mb-16 flex flex-col items-center"
         >
-          <BungaSimetri className="w-10 h-10 mb-6 text-emerald-800" />
-          <h2 className="font-serif text-xl mb-4 font-semibold text-emerald-800">Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
-          <p className="font-sans text-emerald-700 leading-relaxed text-sm md:text-base">
+          <BungaSimetri className="w-10 h-10 mb-6 text-slate-800" />
+          <h2 className="font-serif text-xl mb-4 font-semibold text-slate-800">Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+          <p className="font-sans text-slate-700 leading-relaxed text-sm md:text-base">
             Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah, perkenankanlah kami merangkaikan kasih sayang yang Kau ciptakan di antara kami.
           </p>
         </motion.div>
@@ -40,10 +40,10 @@ export default function Couple() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-emerald-100 shadow-sm"
+            className="flex flex-col items-center bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-slate-100 shadow-sm"
           >
-            <h3 className="font-cursive text-5xl md:text-6xl text-emerald-900 mb-4">{WeddingData.bride.fullname}</h3>
-            <p className="font-sans text-emerald-600 text-sm md:text-base uppercase tracking-wider font-medium">{WeddingData.bride.parents}</p>
+            <h3 className="font-cursive text-5xl md:text-6xl text-slate-900 mb-4">{WeddingData.bride.fullname}</h3>
+            <p className="font-sans text-slate-600 text-sm md:text-base uppercase tracking-wider font-medium">{WeddingData.bride.parents}</p>
           </motion.div>
 
           <motion.div
@@ -61,10 +61,10 @@ export default function Couple() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-emerald-100 shadow-sm"
+            className="flex flex-col items-center bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-slate-100 shadow-sm"
           >
-            <h3 className="font-cursive text-5xl md:text-6xl text-emerald-900 mb-4">{WeddingData.groom.fullname}</h3>
-            <p className="font-sans text-emerald-600 text-sm md:text-base uppercase tracking-wider font-medium">{WeddingData.groom.parents}</p>
+            <h3 className="font-cursive text-5xl md:text-6xl text-slate-900 mb-4">{WeddingData.groom.fullname}</h3>
+            <p className="font-sans text-slate-600 text-sm md:text-base uppercase tracking-wider font-medium">{WeddingData.groom.parents}</p>
           </motion.div>
         </div>
       </div>

@@ -28,10 +28,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-emerald-950 text-emerald-50">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 text-slate-50">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-luminosity" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-emerald-950 via-emerald-900/80 to-emerald-950/40" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-950/40" />
       
       <MotifTenunBackground opacity="0.25" />
       
@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-cursive text-6xl md:text-8xl lg:text-9xl text-emerald-50 mb-6 drop-shadow-lg"
+          className="font-cursive text-6xl md:text-8xl lg:text-9xl text-slate-50 mb-6 drop-shadow-lg"
         >
           {WeddingData.bride.nickname} & {WeddingData.groom.nickname}
         </motion.h1>
@@ -83,17 +83,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1 }}
           className="mt-10 flex gap-4 text-center justify-center"
         >
-          <div className="bg-emerald-900/50 backdrop-blur-sm border border-emerald-800 rounded-xl p-4 min-w-[80px]">
+          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-4 min-w-[80px]">
             <div className="text-3xl font-serif text-amber-400 mb-1">{timeLeft.days}</div>
-            <div className="text-xs uppercase tracking-wider text-emerald-300">Hari</div>
+            <div className="text-xs uppercase tracking-wider text-slate-300">Hari</div>
           </div>
-          <div className="bg-emerald-900/50 backdrop-blur-sm border border-emerald-800 rounded-xl p-4 min-w-[80px]">
+          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-4 min-w-[80px]">
             <div className="text-3xl font-serif text-amber-400 mb-1">{timeLeft.hours}</div>
-            <div className="text-xs uppercase tracking-wider text-emerald-300">Jam</div>
+            <div className="text-xs uppercase tracking-wider text-slate-300">Jam</div>
           </div>
-          <div className="bg-emerald-900/50 backdrop-blur-sm border border-emerald-800 rounded-xl p-4 min-w-[80px]">
+          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-4 min-w-[80px]">
             <div className="text-3xl font-serif text-amber-400 mb-1">{timeLeft.minutes}</div>
-            <div className="text-xs uppercase tracking-wider text-emerald-300">Menit</div>
+            <div className="text-xs uppercase tracking-wider text-slate-300">Menit</div>
           </div>
         </motion.div>
       </div>
