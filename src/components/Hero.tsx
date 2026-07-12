@@ -1,8 +1,32 @@
 import { motion } from "motion/react";
 import { WeddingData } from "../data";
 import { MotifTenunBackground, SudutUkiran, BungaSimetri } from "./Ornaments";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
+
+  useEffect(() => {
+    const targetDate = new Date("2026-08-08T00:00:00").getTime();
+    
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        });
+      }
+    };
+    
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-emerald-950 text-emerald-50">
       {/* Background Image */}
@@ -52,6 +76,26 @@ export default function Hero() {
         >
           08 . 08 . 2026
         </motion.p>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-10 flex gap-4 text-center justify-center"
+        >
+          <div className="bg-emerald-900/50 backdrop-blur-sm border border-emerald-800 rounded-xl p-4 min-w-[80px]">
+            <div className="text-3xl font-serif text-amber-400 mb-1">{timeLeft.days}</div>
+            <div className="text-xs uppercase tracking-wider text-emerald-300">Hari</div>
+          </div>
+          <div className="bg-emerald-900/50 backdrop-blur-sm border border-emerald-800 rounded-xl p-4 min-w-[80px]">
+            <div className="text-3xl font-serif text-amber-400 mb-1">{timeLeft.hours}</div>
+            <div className="text-xs uppercase tracking-wider text-emerald-300">Jam</div>
+          </div>
+          <div className="bg-emerald-900/50 backdrop-blur-sm border border-emerald-800 rounded-xl p-4 min-w-[80px]">
+            <div className="text-3xl font-serif text-amber-400 mb-1">{timeLeft.minutes}</div>
+            <div className="text-xs uppercase tracking-wider text-emerald-300">Menit</div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
