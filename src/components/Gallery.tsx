@@ -15,9 +15,9 @@ const IMAGES = [
   "/gallery/9.jpeg",
   "/gallery/10.jpeg",
   "/gallery/11.jpeg",
-  "/gallery/12.png?v=1",
-  "/gallery/13.png?v=1",
-  "/gallery/14.png?v=1",
+  "/gallery/12.png",
+  "/gallery/13.png",
+  "/gallery/14.png",
 ];
 
 export default function Gallery() {

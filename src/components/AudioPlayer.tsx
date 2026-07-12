@@ -17,7 +17,7 @@ export default function AudioPlayer({ isPlaying, isVisible, onPlayChange }: Audi
     <>
       <div style={{ position: 'absolute', top: '-1000px', left: '-1000px', opacity: 0, pointerEvents: 'none' }}>
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=CNeX9T42As0"
+          url="https://youtu.be/CNeX9T42As0?si=ZcjtthYhvpbODmMK"
           playing={isPlaying}
           loop={true}
           volume={1}
