@@ -1,5 +1,6 @@
 import { Music, VolumeX } from "lucide-react";
 import { motion } from "motion/react";
+import ReactPlayer from "react-player";
 
 interface AudioPlayerProps {
   isPlaying: boolean;
@@ -9,22 +10,27 @@ interface AudioPlayerProps {
 
 export default function AudioPlayer({ isPlaying, isVisible, onPlayChange }: AudioPlayerProps) {
   const togglePlay = () => {
-    const audio = document.getElementById('bg-music') as HTMLAudioElement;
-    if (!audio) return;
-    
-    if (isPlaying) {
-      audio.pause();
-      onPlayChange(false);
-    } else {
-      audio.play().then(() => {
-        onPlayChange(true);
-      }).catch(console.error);
-    }
+    onPlayChange(!isPlaying);
   };
 
   return (
     <>
-      <audio id="bg-music" src="/music.mp3" loop preload="auto" />
+      <div style={{ position: 'absolute', top: '-1000px', left: '-1000px', opacity: 0, pointerEvents: 'none' }}>
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=CNeX9T42As0"
+          playing={isPlaying}
+          loop={true}
+          volume={1}
+          width="10px"
+          height="10px"
+          playsinline={true}
+          config={{
+            youtube: {
+              playerVars: { autoplay: 1, controls: 0, playsinline: 1 }
+            }
+          }}
+        />
+      </div>
       
       {isVisible && (
         <motion.button

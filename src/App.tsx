@@ -33,10 +33,7 @@ export default function App() {
           <Cover 
             onOpen={() => { 
               setIsOpened(true); 
-              const audio = document.getElementById('bg-music') as HTMLAudioElement;
-              if (audio) {
-                audio.play().then(() => setIsPlaying(true)).catch(console.error);
-              }
+              setIsPlaying(true);
             }} 
           />
         )}
