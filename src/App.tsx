@@ -26,16 +26,20 @@ export default function App() {
     }
   }, [isOpened]);
 
+  const handleOpen = () => {
+    setIsOpened(true);
+    setIsPlaying(true);
+    const audio = document.getElementById('bg-music') as HTMLAudioElement;
+    if (audio) {
+      audio.play().catch(console.error);
+    }
+  };
+
   return (
     <main className="w-full min-h-screen bg-emerald-50 font-sans selection:bg-amber-500 selection:text-emerald-950 relative">
       <AnimatePresence>
         {!isOpened && (
-          <Cover 
-            onOpen={() => { 
-              setIsOpened(true); 
-              setIsPlaying(true);
-            }} 
-          />
+          <Cover onOpen={handleOpen} />
         )}
       </AnimatePresence>
       

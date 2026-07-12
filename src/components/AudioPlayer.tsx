@@ -1,5 +1,6 @@
 import { Music, VolumeX } from "lucide-react";
 import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
 
 interface AudioPlayerProps {
   isPlaying: boolean;
@@ -8,23 +9,25 @@ interface AudioPlayerProps {
 }
 
 export default function AudioPlayer({ isPlaying, isVisible, onPlayChange }: AudioPlayerProps) {
-  const togglePlay = () => {
-    const audio = document.getElementById('bg-music') as HTMLAudioElement;
-    if (!audio) return;
-    
-    if (isPlaying) {
-      audio.pause();
-      onPlayChange(false);
-    } else {
-      audio.play().then(() => {
-        onPlayChange(true);
-      }).catch(console.error);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play().catch(console.error);
+      } else {
+        audioRef.current.pause();
+      }
     }
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    onPlayChange(!isPlaying);
   };
 
   return (
     <>
-      <audio id="bg-music" src="/melayu_sambas.mp3" loop preload="auto" />
+      <audio ref={audioRef} id="bg-music" src="/melayu_sambas.mp3" loop preload="auto" />
       
       {isVisible && (
         <motion.button
