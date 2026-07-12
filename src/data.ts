@@ -8,7 +8,7 @@ export const WeddingData = {
   },
   groom: {
     nickname: "Panji",
-    fullname: "Fanzi Anugrah",
+    fullname: "Panji Anugrah",
     parents: "Putra Keempat dari Bapak GUSTIAN dan Ibu SUHARNI",
   },
   akad: {

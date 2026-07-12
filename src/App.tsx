@@ -11,9 +11,11 @@ import Events from "./components/Events";
 import Gift from "./components/Gift";
 import Closing from "./components/Closing";
 import Cover from "./components/Cover";
+import AudioPlayer from "./components/AudioPlayer";
 
 export default function App() {
   const [isOpened, setIsOpened] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (isOpened) {
@@ -27,7 +29,17 @@ export default function App() {
   return (
     <main className="w-full min-h-screen bg-emerald-50 font-sans selection:bg-amber-500 selection:text-emerald-950 relative">
       <AnimatePresence>
-        {!isOpened && <Cover onOpen={() => setIsOpened(true)} />}
+        {!isOpened && (
+          <Cover 
+            onOpen={() => { 
+              setIsOpened(true); 
+              const audio = document.getElementById('bg-music') as HTMLAudioElement;
+              if (audio) {
+                audio.play().then(() => setIsPlaying(true)).catch(console.error);
+              }
+            }} 
+          />
+        )}
       </AnimatePresence>
       
       {isOpened && (
@@ -40,6 +52,7 @@ export default function App() {
           <Closing />
         </div>
       )}
+      <AudioPlayer isPlaying={isPlaying} isVisible={isOpened} onPlayChange={setIsPlaying} />
     </main>
   );
 }
