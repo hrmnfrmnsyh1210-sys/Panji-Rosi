@@ -31,7 +31,10 @@ export default function App() {
     setIsPlaying(true);
     const audio = document.getElementById('bg-music') as HTMLAudioElement;
     if (audio) {
-      audio.play().catch(console.error);
+      audio.play().catch((e) => {
+        console.error("Audio play failed:", e);
+        setIsPlaying(false);
+      });
     }
   };
 

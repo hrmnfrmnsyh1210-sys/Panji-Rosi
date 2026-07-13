@@ -1,7 +1,7 @@
 import { Music, VolumeX } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
-import bgMusic from "../assets/melayu_sambas.mp3";
+import bgMusic from "../assets/new_music.mp3";
 
 interface AudioPlayerProps {
   isPlaying: boolean;
@@ -13,17 +13,36 @@ export default function AudioPlayer({ isPlaying, isVisible, onPlayChange }: Audi
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.play().catch(console.error);
-      } else {
-        audioRef.current.pause();
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.error("Auto-play was prevented:", error);
+          onPlayChange(false);
+        });
       }
+    } else {
+      audio.pause();
     }
-  }, [isPlaying]);
+  }, [isPlaying, onPlayChange]);
 
   const togglePlay = () => {
-    onPlayChange(!isPlaying);
+    const audio = audioRef.current;
+    if (audio) {
+      if (isPlaying) {
+        audio.pause();
+        onPlayChange(false);
+      } else {
+        audio.play().then(() => {
+          onPlayChange(true);
+        }).catch(console.error);
+      }
+    } else {
+      onPlayChange(!isPlaying);
+    }
   };
 
   return (
@@ -36,7 +55,7 @@ export default function AudioPlayer({ isPlaying, isVisible, onPlayChange }: Audi
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
           onClick={togglePlay}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-slate-900 text-amber-400 rounded-full flex items-center justify-center shadow-lg border-2 border-amber-500/30 hover:bg-slate-800 hover:scale-110 transition-all cursor-pointer"
+          className="fixed bottom-6 right-6 z-[99] w-12 h-12 bg-slate-900 text-amber-400 rounded-full flex items-center justify-center shadow-lg border-2 border-amber-500/30 hover:bg-slate-800 hover:scale-110 transition-all cursor-pointer"
           aria-label={isPlaying ? "Pause music" : "Play music"}
         >
           {isPlaying ? (
