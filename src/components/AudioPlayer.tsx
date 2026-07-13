@@ -46,7 +46,9 @@ export default function AudioPlayer({ isPlaying, isVisible, onPlayChange }: Audi
 
   return (
     <>
-      <audio ref={audioRef} id="bg-music" src="/music.mp3" loop preload="auto" />
+      <audio ref={audioRef} id="bg-music" loop preload="auto">
+        <source src="/music.mp3" type="audio/mpeg" />
+      </audio>
       
       {isVisible && (
         <motion.button
