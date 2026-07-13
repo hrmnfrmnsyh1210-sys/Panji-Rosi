@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Send, Heart, MessageSquareHeart, CheckCircle2, XCircle, Loader2, User } from "lucide-react";
 import { BungaSimetri } from "./Ornaments";
 
-const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL as string;
+const APPS_SCRIPT_URL = (import.meta.env.VITE_APPS_SCRIPT_URL as string) || "https://script.google.com/macros/s/AKfycbwZWUA5bSFAHt3FGcCoyKmHGgszlb8cgz3BtGdBDSO_hzUsIDCWDmfiIyKO5TdLnyVO/exec";
 
 interface Wish {
   timestamp: string;
