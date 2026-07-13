@@ -10,6 +10,7 @@ import Gallery from "./components/Gallery";
 import Events from "./components/Events";
 import Gift from "./components/Gift";
 import Closing from "./components/Closing";
+import Wishes from "./components/Wishes";
 import Cover from "./components/Cover";
 import AudioPlayer from "./components/AudioPlayer";
 
@@ -54,6 +55,7 @@ export default function App() {
           <Gallery />
           <Events />
           <Gift />
+          <Wishes />
           <Closing />
         </div>
       )}
