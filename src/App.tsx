@@ -29,13 +29,6 @@ export default function App() {
   const handleOpen = () => {
     setIsOpened(true);
     setIsPlaying(true);
-    const audio = document.getElementById('bg-music') as HTMLAudioElement;
-    if (audio) {
-      audio.play().catch((e) => {
-        console.error("Audio play failed:", e);
-        setIsPlaying(false);
-      });
-    }
   };
 
   return (
