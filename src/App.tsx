@@ -29,6 +29,14 @@ export default function App() {
   const handleOpen = () => {
     setIsOpened(true);
     setIsPlaying(true);
+    // Play audio directly in the user gesture handler to bypass autoplay restrictions
+    const audio = document.getElementById('bg-music') as HTMLAudioElement;
+    if (audio) {
+      audio.play().catch((e) => {
+        console.error("Audio play failed:", e);
+        setIsPlaying(false);
+      });
+    }
   };
 
   return (

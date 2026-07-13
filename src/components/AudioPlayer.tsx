@@ -1,7 +1,7 @@
 import { Music, VolumeX } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
-import bgMusic from "../assets/background_music.mp3";
+import bgMusic from "../assets/bg_music_v2.mp3";
 
 interface AudioPlayerProps {
   isPlaying: boolean;
