@@ -1,6 +1,7 @@
 import { Music, VolumeX } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
+import bgMusic from "../assets/background_music.mp3";
 
 interface AudioPlayerProps {
   isPlaying: boolean;
@@ -46,7 +47,7 @@ export default function AudioPlayer({ isPlaying, isVisible, onPlayChange }: Audi
 
   return (
     <>
-      <audio ref={audioRef} id="bg-music" src="/new_music.mp3" loop preload="auto" />
+      <audio ref={audioRef} id="bg-music" src={bgMusic} loop preload="auto" />
       
       {isVisible && (
         <motion.button
